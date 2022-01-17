@@ -1,0 +1,249 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns='http://transraz/'
+     xml:base='http://transraz/'
+     xmlns:dbo='http://dbpedia.org/ontology/'
+     xmlns:owl='http://www.w3.org/2002/07/owl#'
+     xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
+     xmlns:xml='http://www.w3.org/XML/1998/namespace'
+     xmlns:xsd='http://www.w3.org/2001/XMLSchema#'
+     xmlns:foaf='http://xmlns.com/foaf/0.1/'
+     xmlns:rdfs='http://www.w3.org/2000/01/rdf-schema#'
+     xmlns:vcard='http://www.w3.org/2006/vcard/ns#'
+     xmlns:schema='http://schema.org/'
+     xmlns:ontology='http://dbpedia.org/ontology/'
+     xmlns:transraz='http://transraz/'
+     xmlns:addressbook='http://transraz/addressbook1908#'>
+    <owl:Ontology rdf:about='http://transraz/'/>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://transraz/streetAddress -->
+
+    <owl:ObjectProperty rdf:about='http://transraz/streetAddress'>
+        <rdfs:domain rdf:resource='http://dbpedia.org/ontology/Building'/>
+        <rdfs:range rdf:resource='http://dbpedia.org/ontology/Street'/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://transraz/isStreetAddressOf -->
+
+    <owl:ObjectProperty rdf:about='http://transraz/isStreetAddressOf'>
+        <rdfs:domain rdf:resource='http://dbpedia.org/ontology/Street'/>
+        <rdfs:range rdf:resource='http://dbpedia.org/ontology/Building'/>
+    </owl:ObjectProperty>
+    
+
+    <!-- http://transraz/address -->
+
+    <owl:ObjectProperty rdf:about='http://transraz/address'>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType='Collection'>
+                    <rdf:Description rdf:about='http://dbpedia.org/ontology/Person'/>
+                    <rdf:Description rdf:about='http://dbpedia.org/ontology/Organisation'/>
+                    <rdf:Description rdf:about='http://transraz/BuildingPart'/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource='http://transraz/Address'/>
+    </owl:ObjectProperty>
+
+
+
+    <!-- http://transraz/isAddressOf -->
+
+    <owl:ObjectProperty rdf:about='http://transraz/isAddressOf'>
+        <rdfs:domain rdf:resource='http://transraz/Address'/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType='Collection'>
+                    <rdf:Description rdf:about='http://dbpedia.org/ontology/Person'/>
+                    <rdf:Description rdf:about='http://dbpedia.org/ontology/Organisation'/>
+                    <rdf:Description rdf:about='http://transraz/BuildingPart'/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+
+
+    <!-- http://transraz/branch -->
+
+    <owl:ObjectProperty rdf:about='http://transraz/branch'>
+        <rdfs:domain rdf:resource='http://dbpedia.org/ontology/Organisation'/>
+        <rdfs:range rdf:resource='http://transraz/Branch'/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://transraz/isBranchOf -->
+
+    <owl:ObjectProperty rdf:about='http://transraz/isBranchOf'>
+        <rdfs:domain rdf:resource='http://transraz/Branch'/>
+        <rdfs:range rdf:resource='http://dbpedia.org/ontology/Organisation'/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://transraz/normalizedOccupation -->
+
+    <owl:ObjectProperty rdf:about='http://transraz/normalizedOccupation'>
+        <rdfs:domain rdf:resource='http://dbpedia.org/ontology/Profession'/>
+        <rdfs:range rdf:resource='http://dbpedia.org/ontology/Profession'/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://www.w3.org/2002/07/owl#sameAs -->
+
+    <owl:ObjectProperty rdf:about='http://www.w3.org/2002/07/owl#sameAs'>
+        <rdfs:domain rdf:resource='http://dbpedia.org/ontology/Street'/>
+        <rdfs:range rdf:resource='http://dbpedia.org/ontology/Street'/>
+    </owl:ObjectProperty>
+
+
+    <!-- http://dbpedia.org/ontology/owner -->
+
+    <owl:ObjectProperty rdf:about='http://dbpedia.org/ontology/owner'>
+        <rdfs:domain rdf:resource='http://transraz/Address'/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType='Collection'>
+                    <rdf:Description rdf:about='http://dbpedia.org/ontology/Person'/>
+                    <rdf:Description rdf:about='http://dbpedia.org/ontology/Organisation'/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+    <!-- http://dbpedia.org/ontology/part -->
+
+    <owl:ObjectProperty rdf:about='http://dbpedia.org/ontology/part'>
+        <rdfs:domain rdf:resource='http://transraz/BuildingPart'/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType='Collection'>
+                    <rdf:Description rdf:about='http://transraz/BuildingPart'/>
+                    <rdf:Description rdf:about='http://dbpedia.org/ontology/Building'/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+    <!-- http://dbpedia.org/ontology/profession -->
+
+    <owl:ObjectProperty rdf:about='http://dbpedia.org/ontology/profession'>
+        <rdfs:domain rdf:resource='http://dbpedia.org/ontology/Person'/>
+        <rdfs:range rdf:resource='http://dbpedia.org/ontology/Profession'/>
+    </owl:ObjectProperty>
+    
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://transraz/abbreviatedName -->
+
+    <owl:DatatypeProperty rdf:about='http://transraz/abbreviatedName'>
+        <rdfs:domain rdf:resource='http://dbpedia.org/ontology/Person'/>
+        <rdfs:range rdf:resource='http://www.w3.org/2000/01/rdf-schema#Literal'/>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://transraz/altoCoordinates -->
+
+    <owl:DatatypeProperty rdf:about='http://transraz/altoCoordinates'>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType='Collection'>
+                    <rdf:Description rdf:about='http://dbpedia.org/ontology/Person'/>
+                    <rdf:Description rdf:about='http://dbpedia.org/ontology/Organisation'/>
+                    <rdf:Description rdf:about='http://dbpedia.org/ontology/Street'/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource='http://www.w3.org/2000/01/rdf-schema#Literal'/>
+    </owl:DatatypeProperty>
+    
+
+    <!-- http://xmlns.com/foaf/0.1/familyName -->
+
+    <owl:DatatypeProperty rdf:about='http://xmlns.com/foaf/0.1/familyName'>
+        <rdfs:domain rdf:resource='http://dbpedia.org/ontology/Person'/>
+        <rdfs:range rdf:resource='http://www.w3.org/2000/01/rdf-schema#Literal'/>
+    </owl:DatatypeProperty>
+    
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+
+
+    <!-- http://transraz/Address -->
+
+    <owl:Class rdf:about='http://transraz/Address'/>
+
+
+
+    <!-- http://transraz/Branch -->
+
+    <owl:Class rdf:about='http://transraz/Branch'/>
+
+
+
+    <!-- http://transraz/BuildingPart -->
+
+    <owl:Class rdf:about='http://transraz/BuildingPart'/>
+
+
+
+    <!-- http://dbpedia.org/ontology/Building -->
+
+    <owl:Class rdf:about='http://dbpedia.org/ontology/Building'/>
+
+
+
+    <!-- http://dbpedia.org/ontology/Street -->
+
+    <owl:Class rdf:about='http://dbpedia.org/ontology/Street'/>
+
+
+
+    <!-- http://dbpedia.org/ontology/Profession -->
+
+    <owl:Class rdf:about='http://dbpedia.org/ontology/Profession'/>
+
+
+
+    <!-- http://dbpedia.org/ontology/Person -->
+
+    <owl:Class rdf:about='http://dbpedia.org/ontology/Person'/>
+
+
+
+    <!-- http://dbpedia.org/ontology/Organisation -->
+
+    <owl:Class rdf:about='http://dbpedia.org/ontology/Organisation'/>
+
+</rdf:RDF>
